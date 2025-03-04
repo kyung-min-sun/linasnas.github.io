@@ -1,3 +1,12 @@
 <div class="publications">
   {% bibliography --group_by none --query @*[selected=true]* %}
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var elements = document.getElementsByClassName("publications");
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].innerHTML = elements[i].innerHTML.replace(/{{ my_name }}/g, '<strong>{{ my_name }}</strong>');
+    }
+  });
+</script>
